@@ -1,0 +1,81 @@
+import type { Certification } from "@/types";
+
+export const certifications: Certification[] = [
+  {
+    id: "data-science-thiranex",
+    title: "Data Science Certification",
+    issuer: "Thiranex",
+    date: "2024",
+    icon: "BarChart3",
+  },
+  {
+    id: "python-dream-tech",
+    title: "Python Programming Certification",
+    issuer: "Dream Technology",
+    date: "2024",
+    icon: "Code2",
+  },
+  {
+    id: "ai-ml-cert",
+    title: "AI and Machine Learning Certification",
+    issuer: "Online Platform",
+    date: "2024",
+    icon: "Brain",
+  },
+  {
+    id: "stanford-ml-specialization",
+    title: "Machine Learning Specialization",
+    issuer: "Stanford University & DeepLearning.AI",
+    date: "2024",
+    icon: "Brain",
+  },
+  {
+    id: "deep-learning-specialization",
+    title: "Deep Learning Specialization",
+    issuer: "DeepLearning.AI",
+    date: "2024",
+    icon: "Brain",
+  },
+  {
+    id: "ibm-data-eng",
+    title: "Data Engineering Foundations",
+    issuer: "IBM",
+    date: "2024",
+    icon: "BarChart3",
+  },
+  {
+    id: "google-cloud-ace",
+    title: "Associate Cloud Engineer",
+    issuer: "Google Cloud",
+    date: "2025",
+    icon: "Award",
+  },
+  {
+    id: "tensorflow-developer",
+    title: "TensorFlow Developer Certificate",
+    issuer: "TensorFlow Certificate Network",
+    date: "2024",
+    icon: "Code2",
+  },
+  {
+    id: "genai-llms-aws",
+    title: "Generative AI with Large Language Models",
+    issuer: "DeepLearning.AI & AWS",
+    date: "2025",
+    icon: "Brain",
+  },
+  {
+    id: "vanderbilt-prompt-eng",
+    title: "Prompt Engineering for ChatGPT",
+    issuer: "Vanderbilt University",
+    date: "2024",
+    icon: "Award",
+  },
+  {
+    id: "supervised-ml-stanford",
+    title: "Supervised Machine Learning",
+    issuer: "Stanford Online",
+    date: "2024",
+    icon: "Brain",
+  },
+];
