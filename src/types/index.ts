@@ -37,6 +37,7 @@ export interface Project {
   liveUrl?: string;
   image?: string;
   screenshots?: string[];
+  featured?: boolean;
 }
 
 export type ProjectCategory = 'AI/ML' | 'Web' | 'Automation' | 'All';

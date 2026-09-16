@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Lightbulb, BookOpen, Brain, MessageSquareCode, Cpu } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Card } from "@/components/ui/Card";
+import { projects } from "@/data/projects";
 import { useRef } from "react";
 
 const interests = [
@@ -15,7 +16,7 @@ const interests = [
 ];
 
 const stats = [
-  { label: "Projects Built", value: "6+" },
+  { label: "Projects Built", value: `${projects.length}+` },
   { label: "Technologies", value: "20+" },
   { label: "Internships", value: "3" },
   { label: "Certifications", value: "10+" },

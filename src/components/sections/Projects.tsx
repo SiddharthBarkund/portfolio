@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, X, ChevronLeft, ChevronRight, Eye } from "lucide-react";
+import { ExternalLink, X, ChevronLeft, ChevronRight, Eye, ChevronDown } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Badge } from "@/components/ui/Badge";
@@ -14,6 +14,7 @@ const categories: ProjectCategory[] = ["All", "AI/ML", "Web", "Automation"];
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory>("All");
+  const [showAll, setShowAll] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -21,6 +22,8 @@ export function Projects() {
     activeFilter === "All"
       ? projects
       : projects.filter((p) => p.category === activeFilter);
+
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 6);
 
   useEffect(() => {
     if (!selectedProject || !selectedProject.screenshots) return;
@@ -59,7 +62,10 @@ export function Projects() {
         {categories.map((category) => (
           <button
             key={category}
-            onClick={() => setActiveFilter(category)}
+            onClick={() => {
+              setActiveFilter(category);
+              setShowAll(false);
+            }}
             className={cn(
               "rounded-xl px-5 py-2.5 text-sm font-medium transition-all duration-300 cursor-pointer",
               activeFilter === category
@@ -82,7 +88,7 @@ export function Projects() {
           transition={{ duration: 0.3 }}
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
-          {filteredProjects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -105,7 +111,14 @@ export function Projects() {
               >
                 {/* Category badge & View Gallery hover state */}
                 <div className="mb-4 flex items-center justify-between">
-                  <Badge variant="accent">{project.category}</Badge>
+                  <div className="flex items-center gap-2">
+                    <Badge variant="accent">{project.category}</Badge>
+                    {project.featured && (
+                      <Badge variant="outline" className="border-accent/40 text-accent bg-accent/5 text-[11px] py-0.5 px-2">
+                        Featured
+                      </Badge>
+                    )}
+                  </div>
                   {project.screenshots && (
                     <span className="flex items-center gap-1 text-xs text-accent font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <Eye className="h-3.5 w-3.5" />
@@ -179,6 +192,24 @@ export function Projects() {
           ))}
         </motion.div>
       </AnimatePresence>
+
+      {/* See More / Show Less Button */}
+      {filteredProjects.length > 6 && (
+        <div className="mt-12 flex justify-center">
+          <button
+            onClick={() => setShowAll((prev) => !prev)}
+            className="group inline-flex items-center gap-2.5 rounded-xl border border-card-border bg-card/80 px-6 py-3 text-sm font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:border-accent/40 hover:bg-accent/10 hover:text-accent hover:shadow-lg hover:shadow-accent/5 cursor-pointer"
+          >
+            <span>{showAll ? "Show Less" : "See More Projects"}</span>
+            <ChevronDown
+              className={cn(
+                "h-4 w-4 text-accent transition-transform duration-300",
+                showAll ? "rotate-180" : "group-hover:translate-y-0.5"
+              )}
+            />
+          </button>
+        </div>
+      )}
 
       {/* Screenshot Lightbox Modal */}
       <AnimatePresence>

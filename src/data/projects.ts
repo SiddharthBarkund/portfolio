@@ -2,6 +2,53 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    id: "safeyatra",
+    title: "SafeYatra",
+    description:
+      "An AI-powered tourist safety platform that combines real-time risk prediction, geofencing, weather intelligence, and incident monitoring to detect and respond to tourist safety risks.",
+    longDescription:
+      "An AI-powered tourist safety platform that combines real-time risk prediction, geofencing, weather intelligence, and incident monitoring to detect and respond to tourist safety risks.",
+    techStack: [
+      "Python",
+      "XGBoost",
+      "FastAPI",
+      "Leaflet",
+    ],
+    features: [
+      "AI-based tourist risk prediction",
+      "Real-time geofencing and route monitoring",
+      "Weather and incident risk analysis",
+    ],
+    category: "AI/ML",
+    githubUrl: "https://github.com/HIMANSHUd-17/SIH-Project",
+    featured: true,
+  },
+  {
+    id: "sovereign-ai",
+    title: "Sovereign AI",
+    description:
+      "A sovereign on-premise Agentic AI workbench designed to run AI models locally, orchestrate multi-step tasks, and process enterprise data without relying on external AI services.",
+    longDescription:
+      "A sovereign on-premise Agentic AI workbench designed to run AI models locally, orchestrate multi-step tasks, and process enterprise data without relying on external AI services.",
+    techStack: [
+      "Python",
+      "FastAPI",
+      "Ollama",
+      "RAG",
+      "FAISS",
+      "Qwen",
+      "Docker",
+    ],
+    features: [
+      "Multi-agent AI task orchestration",
+      "Local LLM inference and intelligent model routing",
+      "Offline document analysis and RAG",
+    ],
+    category: "AI/ML",
+    githubUrl: "https://github.com/SiddharthBarkund/SIH-SLM",
+    featured: true,
+  },
+  {
     id: "pipewise-ai",
     title: "PipeWise-AI",
     description:
@@ -74,23 +121,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "website-testing-agent",
-    title: "Website Testing AI Agent",
-    description:
-      "Autonomous AI agent that performs comprehensive website testing and UI/UX analysis.",
-    longDescription:
-      "An intelligent testing agent that autonomously navigates websites, identifies UI/UX issues, performs accessibility checks, and generates detailed QA reports with actionable improvement recommendations.",
-    techStack: ["Python", "Playwright", "AI/ML", "FastAPI"],
-    features: [
-      "Automated website testing",
-      "UI/UX analysis and scoring",
-      "QA report generation",
-      "Intelligent improvement recommendations",
-    ],
-    category: "Automation",
-    githubUrl: "https://github.com/SiddharthBarkund",
-  },
-  {
     id: "lawguide-ai",
     title: "LawGuideAI",
     description:
@@ -113,6 +143,23 @@ export const projects: Project[] = [
       "/img/Screenshot 2026-06-22 112523.png",
       "/img/Screenshot 2026-06-22 112536.png"
     ],
+  },
+  {
+    id: "website-testing-agent",
+    title: "Website Testing AI Agent",
+    description:
+      "Autonomous AI agent that performs comprehensive website testing and UI/UX analysis.",
+    longDescription:
+      "An intelligent testing agent that autonomously navigates websites, identifies UI/UX issues, performs accessibility checks, and generates detailed QA reports with actionable improvement recommendations.",
+    techStack: ["Python", "Playwright", "AI/ML", "FastAPI"],
+    features: [
+      "Automated website testing",
+      "UI/UX analysis and scoring",
+      "QA report generation",
+      "Intelligent improvement recommendations",
+    ],
+    category: "Automation",
+    githubUrl: "https://github.com/SiddharthBarkund",
   },
   {
     id: "aiml-collection",

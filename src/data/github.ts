@@ -5,6 +5,12 @@ export const githubProfile: GitHubProfile = {
   profileUrl: "https://github.com/SiddharthBarkund",
   repos: [
     {
+      name: "SIH-SLM",
+      description: "Sovereign on-premise Agentic AI workbench for local LLM inference and private enterprise workflows",
+      language: "Python",
+      url: "https://github.com/SiddharthBarkund/SIH-SLM",
+    },
+    {
       name: "PipeWise-AI",
       description: "AI-powered data analysis assistant for querying CSV datasets via natural language",
       language: "Python",
